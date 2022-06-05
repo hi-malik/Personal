@@ -7,12 +7,12 @@ class Solution {
         
         for(int i = 0; i < V; i++){
             if(vis[i] == false){
-                if(isCycle(adj, i, vis)) return true;
+                if(isCycleBFS(adj, i, vis)) return true;
             }
         }
         return false;
     }
-    public boolean isCycle(ArrayList<ArrayList<Integer>> adj, int s, boolean vis[]){
+    public boolean isCycleBFS(ArrayList<ArrayList<Integer>> adj, int s, boolean vis[]){
         Queue<Node> q = new LinkedList<>();
         q.add(new Node(s, -1));
         vis[s] = true;
